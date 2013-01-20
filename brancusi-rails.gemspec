@@ -7,17 +7,18 @@ require "brancusi-rails/version"
 Gem::Specification.new do |s|
   s.name        = "brancusi-rails"
   s.version     = BrancusiRails::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of BrancusiRails."
-  s.description = "TODO: Description of BrancusiRails."
+  s.authors     = ["John Brunton"]
+  s.email       = ["john_brunton@hotmail.co.uk"]
+  s.homepage    = "https://github.com/jbrunton/brancusi-rails"
+  s.summary     = "Rails support for Brancusi.js"
+  s.description = "Rails support for Brancusi.js"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["Rakefile"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2.11"
   s.add_dependency "coffee-rails"
+  s.add_dependency "brancusi"
 
   s.add_development_dependency "sqlite3"
 end
