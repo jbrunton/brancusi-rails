@@ -1,7 +1,9 @@
-class Brancusi::ViewGenerator < Rails::Generators::NamedBase
-  source_root File.expand_path('../templates', __FILE__)
+module Brancusi
+  class ViewGenerator < Rails::Generators::NamedBase
+    source_root File.expand_path('../templates', __FILE__)
   
-  def create_module
-    template 'view.rb', File.join("app/views/templates", "_#{file_name}.html.erb")
+    def create_view
+      template 'view.rb', File.join("app/views/templates", "_#{file_name}.html.erb")
+    end
   end
 end
