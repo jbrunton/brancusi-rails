@@ -30,9 +30,10 @@ module Brancusi
     end
 
     def copy_app
-      directory "app/assets/javascripts/app", "app/assets/javascripts/app"
+      directory "app/assets/javascripts/app"
       copy_file "app/controllers/main_controller.rb"
       copy_file "app/views/main/index.html.erb"
+      directory "app/views/templates"
     end
   
     def define_routes
