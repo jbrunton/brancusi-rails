@@ -15,3 +15,7 @@ gem "jquery-rails"
 
 # To use debugger
 # gem 'debugger'
+
+gem "generator_spec"
+gem "rspec-rails"
+gem "rails"
