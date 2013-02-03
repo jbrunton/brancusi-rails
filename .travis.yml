@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+  - 1.9.3
+branches:
+  only:
+    - master
+script:
+  - mkdir db
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - cd spec/dummy
+  - bundle exec rake spec
+  - bundle exec rails g brancusi:install
+  - bundle exec rails g brancusi:controller home index
+  - bundle exec rails g brancusi:route "@match '/', 'home#index'"
+
