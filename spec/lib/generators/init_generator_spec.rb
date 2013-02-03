@@ -8,7 +8,6 @@ TMP_ROOT = Pathname.new(File.expand_path('../../tmp', __FILE__))
 describe Brancusi::InitGenerator do
   include GeneratorSpec::TestCase
   destination File.expand_path("../../tmp", __FILE__)
-  arguments %w(something)
 
   before(:all) do
     prepare_destination
@@ -26,9 +25,13 @@ describe Brancusi::InitGenerator do
 
     run_generator
   end
+  
+  after(:all) do
+    FileUtils.rm_rf TMP_ROOT
+  end
 
   it "requires brancusi and the app to application.js" do
-    destination_root.should have_structure do
+    destination_root.should have_structure {
       directory 'app' do
         directory 'assets' do
           directory 'javascripts' do
@@ -39,22 +42,22 @@ describe Brancusi::InitGenerator do
           end
         end
       end
-    end
+    }
   end
   
   it "adds routing for a single page application served by the 'main' controller" do
-    destination_root.should have_structure do
+    destination_root.should have_structure {
       directory 'config' do
         file 'routes.rb' do
           contains "root :to => 'main#index'"
           contains "match '/*id' => 'main#index', id: /(?!api|assets).*/"
         end
       end
-    end
+    }
   end
   
   it "copies the templates in app/assets/javascripts/app" do
-    destination_root.should have_structure do
+    destination_root.should have_structure {
       directory 'app' do
         directory 'assets' do
           directory 'javascripts' do
@@ -70,6 +73,6 @@ describe Brancusi::InitGenerator do
           end
         end
       end
-    end
+    }
   end
 end
