@@ -16,7 +16,7 @@ gem "jquery-rails"
 # To use debugger
 # gem 'debugger'
 
-gem "brancusi", :git => 'git@github.com:jbrunton/brancusi.git', :branch => 'master'
+gem "brancusi", :git => 'git://github.com/jbrunton/brancusi.git', :branch => 'master'
 
 gem "generator_spec"
 gem "rspec-rails"
