@@ -13,4 +13,5 @@ script:
   - bundle exec rails g brancusi:controller home index
   - bundle exec rails g brancusi:route "@match '/', 'home#index'"
   - cd ../..
-  - bundle exec rspec spec/lib/generators/init_generator_spec.rb
+  - bundle exec rake spec
+
