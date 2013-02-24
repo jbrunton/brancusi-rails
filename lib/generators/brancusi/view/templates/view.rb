@@ -1,1 +1,2 @@
-<p>Find me in app/assets/javascripts/app/views/_<%= file_name %>.html.erb</p>
+<h3><%= class_path.join %>/<%= file_name %></h3>
+<p>Find me in <b>app/views/templates/<%= class_path.join %>/_<%= file_name %>.html.erb</b></p>
