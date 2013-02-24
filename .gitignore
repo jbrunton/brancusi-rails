@@ -7,4 +7,9 @@ spec/dummy/tmp/
 spec/dummy/.sass-cache
 spec/lib/tmp
 Gemfile.lock
+spec/dummy/app/assets/javascripts/app/
+spec/dummy/app/controllers/main_controller.rb
+spec/dummy/app/views/main/
+spec/dummy/app/views/templates/
+spec/dummy/db/
 
