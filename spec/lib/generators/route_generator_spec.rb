@@ -3,8 +3,6 @@ require 'rails/generators'
 
 require File.expand_path('../../../../lib/generators/brancusi/route/route_generator', __FILE__)
 
-TMP_ROOT = Pathname.new(File.expand_path('../../tmp', __FILE__))
-
 describe Brancusi::RouteGenerator do
   include GeneratorSpec::TestCase
   destination File.expand_path("../../tmp", __FILE__)
